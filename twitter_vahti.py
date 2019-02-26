@@ -41,9 +41,12 @@ while True:
         
             
         if GPIO.input(18) == False:
-            
+            #cam.get_image() is used four times because of some buggy functionality of the pygame camera module
             img = cam.get_image()
-            #time.sleep(2)
+            img = cam.get_image()
+            img = cam.get_image()
+            img = cam.get_image()
+            
             
 
             pygame.image.save(img, "photo.jpg")
